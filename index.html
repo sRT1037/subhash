@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subhash Ram Tallapaneni</title>
+<style>
+  body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    line-height: 1.5;
+  }
+  a {
+    color: #0000EE;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+  }
+  .title-line {
+    margin: 0 0 10px 0;
+  }
+  .contact-line {
+    margin: 4px 0;
+  }
+  .header-links {
+    margin: 6px 0 14px 0;
+  }
+  .header-links a {
+    margin-right: 14px;
+  }
+  table.info-table {
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    margin-bottom: 16px;
+  }
+  table.info-table td {
+    padding: 6px 4px;
+    vertical-align: top;
+  }
+  table.info-table td.label {
+    font-weight: bold;
+    width: 140px;
+    white-space: nowrap;
+  }
+  .tabs {
+    margin-bottom: 4px;
+  }
+  .tabs a {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-right: 4px;
+    margin-bottom: 6px;
+    border: 1px solid #999;
+    background: #eee;
+    color: #000;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .tabs a:hover {
+    background: #ddd;
+    text-decoration: none;
+  }
+  .tabs a.active {
+    background: #cde;
+    border-color: #666;
+  }
+  .panel {
+    display: none;
+    border-top: 1px solid #000;
+    padding: 10px 0;
+  }
+  .panel.active-panel {
+    display: block;
+  }
+  table.section-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table.section-table td.label {
+    font-weight: bold;
+    width: 140px;
+    vertical-align: top;
+    padding: 4px 4px 4px 0;
+  }
+  table.section-table td.content {
+    vertical-align: top;
+    padding: 4px 0;
+  }
+  ul.plain-list {
+    margin: 0;
+    padding-left: 18px;
+  }
+  ul.plain-list li {
+    margin-bottom: 8px;
+  }
+  .exp-entry {
+    margin-bottom: 10px;
+  }
+  .exp-date {
+    font-weight: bold;
+  }
+  .essay {
+    margin: 10px 0;
+  }
+  .essay p {
+    margin: 0 0 10px 0;
+  }
+  .doc-links {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px dashed #999;
+  }
+  .doc-links .label-small {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .doc-links a {
+    display: block;
+    margin-bottom: 4px;
+  }
+  footer {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #000;
+    font-size: 12px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Subhash Ram Tallapaneni</h1>
+  <div class="title-line">Computer Science Undergraduate, IIT Madras</div>
+
+  <div class="contact-line">
+    Email: <a href="mailto:subhashramtallapaneni121@gmail.com">subhashramtallapaneni121@gmail.com</a> &nbsp;&middot;&nbsp; Phone: 8688761394
+  </div>
+  <div class="header-links">
+    <a href="https://github.com/sRT1037" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/subhashram236" target="_blank">LinkedIn</a>
+    <a href="resume.pdf" target="_blank">CV</a>
+    <a href="#" id="bio-toggle">Brief Bio</a>
+  </div>
+
+  <div id="bio-panel" style="display:none; border-top:1px solid #000; border-bottom:1px solid #000; padding:10px 0; margin-bottom:16px;">
+    I'm a Computer Science undergrad at IIT Madras, currently figuring out how agentic AI systems actually hold up outside a demo. Most of my hands-on experience with this came from an internship at Rubrik, where I worked on disaster-recovery tooling in Go, and earlier at Arcana Analytics, building an MCP server that let AI agents talk to internal systems. Outside of work, I spend a fair bit of time thinking and writing about where AI is headed &mdash; compute, geopolitics, the whole mess of it &mdash; more as a way to think clearly than to have hot takes. I TA a couple of courses at IITM, mentor first-years through Saathi, and this year I'm coordinating the Ambience team for Saarang. I also compete a bit on Codeforces and CodeChef when I need a break from everything else. Lately I've been curious about quantum computing and whether there's anything real to the "quantum neuron" idea, though that's more reading than research right now. Still early in figuring out what I actually want to specialize in &mdash; this page is partly an attempt to track that.
+  </div>
+
+  <table class="info-table">
+    <tr>
+      <td class="label">Interests</td>
+      <td>Understanding brain, agentic AI systems, multi-agent frameworks, Quantum Computing (Quantum neurons)</td>
+    </tr>
+  </table>
+
+  <div class="tabs" id="tabs">
+    <a href="#" data-tab="ai" class="active">AI Knowledge</a>
+    <a href="#" data-tab="exp">Experience</a>
+    <a href="#" data-tab="projects">Projects</a>
+    <a href="#" data-tab="por">Positions of Responsibility</a>
+    <a href="#" data-tab="tools">Tools</a>
+    <a href="#" data-tab="acad">Academic Background</a>
+  </div>
+
+  <!-- AI Knowledge -->
+  <div class="panel active-panel" id="panel-ai">
+    <table class="section-table">
+      <tr>
+        <td class="label">AI Knowledge</td>
+        <td class="content">
+          <div class="essay">
+            <p>AI is something that can be used to accelerate any kind of desk work — and going forward, it's moving into 3D/physical work too (Boston Dynamics, and China, are making real progress there). At its core it's a neural network with multiple layers, structured loosely like a brain.</p>
+            <p>The thing Claude Code lacks compared to a brain is long-term memory — it tends to hallucinate/guess rather than recall. During my time at Rubrik I worked around this using a knowledge graph (via Obsidian) as long-term memory, combined with agents working in a structured way — a mini agentic framework.</p>
+            <p>AI is mostly three things: Compute, Algorithms, and Data. Compute is handled by NVIDIA/AMD; Algorithms by labs like Anthropic, OpenAI, DeepMind (and Chinese counterparts like Kimi/Moonshot, GLM); Data is the ongoing bottleneck everyone's racing to solve.</p>
+            <p>Also thinking about: US-China AI competition, open-source vs closed models, jailbreaking vs prompt injection, and what it means for a model to move from finding vulnerabilities to exploiting them.</p>
+            <p>Built an agentic workflow to speed up coding during my time at Rubrik.</p>
+          </div>
+          <div class="doc-links">
+            <span class="label-small">Full notes and write-ups:</span>
+            <a href="https://drive.google.com/file/d/1qIfI2L1OpU31jnIoc9GPFydJjJxqh0CT/view" target="_blank">Agentic workflow at Rubrik</a>
+            <a href="https://docs.google.com/document/d/1CvFMXMxAfsaI9ZIezIsDwjiTy3lEoIOchggXaFWECKg/edit" target="_blank">Multiagent Multi Team — agent pools, knowledge graphs, subteam structure</a>
+            <a href="https://docs.google.com/document/d/1nEDDUwzmy8EfmoY2hm2ISA5cE2uHbyedAKzYNnS7zhM/edit" target="_blank">AI — my understanding of AI (compute, algorithms, data, US-China landscape)</a>
+            <a href="https://docs.google.com/document/d/1R5AwAQpcIs3PzIdzCMol2BVxUJPK2vVXWUBUPLFzbIs/edit" target="_blank">Artificial Intelligence VS Humanity — models, moral agency, and AI geopolitics</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Experience -->
+  <div class="panel" id="panel-exp">
+    <table class="section-table">
+      <tr>
+        <td class="label">Experience</td>
+        <td class="content">
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2026 &ndash; Present</span> &nbsp; Teaching Assistant, Paradigms of Programming<br>
+            Prof. Kartik Nagar, IIT Madras
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">May 2026 &ndash; Aug 2026</span> &nbsp; Software Engineer Intern, Rubrik, Bengaluru<br>
+            Built a Go interface for on-prem cluster recovery, enabling backup and restoration of control plane data for disaster-recovery scenarios.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2026 &ndash; May 2026</span> &nbsp; Teaching Assistant, Computer Organization and Architecture &mdash; Prof. Gopalakrishnan Srinivasan, IIT Madras
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Nov 2025 &ndash; Jan 2026</span> &nbsp; Software Engineer Intern, Arcana Analytics, Remote<br>
+            Built an MCP server (Python) exposing tools for AI agents; latency optimization via dynamic tool loading.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Projects -->
+  <div class="panel" id="panel-projects">
+    <table class="section-table">
+      <tr>
+        <td class="label">Projects</td>
+        <td class="content">
+          <div style="font-weight:bold; margin-bottom:6px;">Self Projects</div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2025 &ndash; Apr 2025</span> &nbsp; Greedy-Based Huffman File Compression (C++)<br>
+            Lossless file compression tool using Huffman coding with a greedy approach; variable-length symbol-frequency encoding for storage/decoding.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2025 &ndash; Apr 2025</span> &nbsp; 5-Stage Scalar Pipeline CPU Simulator (C++)<br>
+            Simulates instruction execution (IF, ID, EX, MEM, WB); takes machine code as input, outputs cycle counts and hazard statistics.
+          </div>
+
+          <div style="font-weight:bold; margin:14px 0 6px 0;">Lab Projects</div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2026 &ndash; May 2026</span> &nbsp; CS6630 &ndash; Secure Processor Microarchitecture<br>
+            Wrote algorithms to recover AES encryption keys from power traces using passive side-channel attacks.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2026 &ndash; May 2026</span> &nbsp; CS3205 &ndash; Computer Networks<br>
+            Built a prototype application-layer protocol and tested it against multiple streaming protocols &mdash; TCP, UDP, and different TCP variants.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2025 &ndash; Nov 2025</span> &nbsp; CS3100 &ndash; Paradigms of Programming<br>
+            Worked with OCaml and Prolog to contrast imperative, functional, and logic programming &mdash; including refs in OCaml as the imperative-style equivalent within a functional language.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2025 &ndash; Nov 2025</span> &nbsp; CS3300 &ndash; Compiler Design (The 'N' Wizard Tournament)<br>
+            Building a compiler for a subset of Java &mdash; lexing, parsing, and translating high-level code down to low-level code.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2025 &ndash; Nov 2025</span> &nbsp; CS3500 &ndash; Operating Systems<br>
+            Worked on xv6 kernel features &mdash; system calls, page tables, traps, and scheduling. Ref: <a href="https://pdos.csail.mit.edu/6.828/2021/schedule.html" target="_blank">MIT 6.S081</a>.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2025 &ndash; Apr 2025</span> &nbsp; CS2810 &ndash; Library Management System (C++)<br>
+            Implemented using OOP concepts like polymorphism, inheritance, and exception handling.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2025 &ndash; Apr 2025</span> &nbsp; CS2610 &ndash; Interrupt Handling, Context Switching and Virtual Paging (RISC-V)<br>
+            Executed and verified on the Spike simulator in bare-metal mode without a proxy kernel.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jul 2024 &ndash; Nov 2024</span> &nbsp; CS2710 &ndash; Course Registration System (C++)<br>
+            Managed students, courses, prerequisites, and time-slot conflicts, with waitlists and drop handling.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Positions of Responsibility -->
+  <div class="panel" id="panel-por">
+    <table class="section-table">
+      <tr>
+        <td class="label">Positions of Responsibility</td>
+        <td class="content">
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2026 &ndash; Present</span> &nbsp; Super Coordinator, Ambience Team &mdash; Saarang, IIT Madras<br>
+            Shape how Saarang looks and feels to the outside world &mdash; visual identity and on-ground decor across the fest.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Aug 2025 &ndash; Present</span> &nbsp; Student Mentor &mdash; Saathi, IIT Madras<br>
+            Guide first-year students through academic and personal transition into campus life.
+          </div>
+          <div class="exp-entry">
+            <span class="exp-date">Jan 2024 &ndash; Apr 2024</span> &nbsp; Deputy Coordinator, Mathematics Club<br>
+            Explored optimization and game theory; presented a project on the Traveling Salesman Problem.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Tools -->
+  <div class="panel" id="panel-tools">
+    <table class="section-table">
+      <tr>
+        <td class="label">Tools</td>
+        <td class="content">
+          Claude Code, mini-agentic frameworks, Obsidian knowledge graphs, MCPs<br>
+          PyTorch, Pandas, NumPy<br>
+          C, C++, Python, OCaml, RISC-V Assembly, Prolog<br>
+          Matplotlib, Git / GitHub, LaTeX<br><br>
+          Kubernetes
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Academic Background -->
+  <div class="panel" id="panel-acad">
+    <table class="section-table">
+      <tr>
+        <td class="label">Academic Background</td>
+        <td class="content">
+          B.Tech, Computer Science and Engineering &mdash; IIT Madras (Jul 2023 &ndash; Jul 2027), CGPA 9.47<br>
+          Senior Secondary &mdash; Sri Chaitanya College of Education (Jun 2021 &ndash; Jun 2023), 97%<br>
+          Secondary &mdash; Sri Chaitanya Schools (2021), 100%<br><br>
+          Relevant coursework:
+          <table style="width:100%; border-collapse:collapse; margin-top:6px;">
+            <tr>
+              <td style="padding:2px 6px 2px 0;">&bull; Artificial Intelligence</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Multi-Agent Systems</td>
+              <td style="padding:2px 6px 2px 0;">&bull; GPU Programming</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 6px 2px 0;">&bull; Paradigms of Programming</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Probability and Statistics</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Deep Learning</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 6px 2px 0;">&bull; Discrete Mathematics</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Design and Analysis of Algorithms</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Compiler Design</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 6px 2px 0;">&bull; Operating Systems</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Basic Graph Theory</td>
+              <td style="padding:2px 6px 2px 0;">&bull; Languages, Machines and Computation</td>
+            </tr>
+            <tr>
+              <td style="padding:2px 6px 2px 0;">&bull; Computer Organization and Architecture</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table><br>
+          Achievements: AIR 121 (JEE Advanced 2023), AIR 310 (JEE Mains 2023), Top 1% in IOQM / NSEC Olympiads<br><br>
+          Competitive programming: <a href="https://codeforces.com/profile/sRT_103.7" target="_blank">Codeforces &#8599;</a> rating 1433 (Specialist), <a href="https://www.codechef.com/users/srt_1037" target="_blank">CodeChef &#8599;</a> rating 1689 (3 stars)
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    Last updated: August 2026
+  </footer>
+
+<script>
+  var bioToggle = document.getElementById('bio-toggle');
+  var bioPanel = document.getElementById('bio-panel');
+  bioToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (bioPanel.style.display === 'none') {
+      bioPanel.style.display = 'block';
+      bioToggle.textContent = 'Brief Bio (hide)';
+    } else {
+      bioPanel.style.display = 'none';
+      bioToggle.textContent = 'Brief Bio';
+    }
+  });
+
+  var tabs = document.querySelectorAll('#tabs a');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      panels.forEach(function(p) { p.classList.remove('active-panel'); });
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active-panel');
+    });
+  });
+</script>
+
+</body>
+</html>
