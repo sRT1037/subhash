@@ -49,6 +49,15 @@
 
       <h3>Progress log</h3>
 
+      <div class="entry">
+        <span class="date">Sep 2026</span> &nbsp; <b>SiMWiSense</b>
+        <ul>
+          <li>Went through the SiMWiSense paper (multi-subject Wi-Fi activity recognition) &mdash; core idea is one CSI monitor per person, using near-device proximity to separate subjects.</li>
+          <li>Working on modifying the preprocessing pipeline in the codebase, following the paper's diagram (Fig. 5): align &rarr; normalize (&divide; mean amplitude) &rarr; non-overlapping windowing &rarr; tensor S<sub>p</sub> &times; K &times; 2.</li>
+          <li>Their key contribution is FREL &mdash; a few-shot method (frozen CNN embedding + fine-tuned head) that adapts to new environments/subjects with ~15 s of labeled data. <a href="https://claude.ai/code/artifact/d7f61107-da72-46eb-a024-71e0b39728b5?open_in_browser=1&amp;via=user_open&amp;org=a483341c-2fe8-44ea-a1dc-bbe6f046d8d7" target="_blank">Ref</a></li>
+        </ul>
+      </div>
+
       <!-- copy this block for each update:
       <div class="entry">
         <span class="date">Date</span> &nbsp; What you did, what you learned.
