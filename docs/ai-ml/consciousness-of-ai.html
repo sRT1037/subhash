@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consciousness of AI &mdash; Subhash Ram Tallapaneni</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/index.html">Subhash Ram Tallapaneni</a>
+      <nav>
+        <a href="/projects.html">Projects</a>
+        <a href="/ai-ml/index.html">AI/ML</a>
+        <a href="/cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="glossary-title">AI / ML</div>
+      <div class="glossary-cat">AI</div>
+      <ul>
+        <li><a href="/ai-ml/llm-software-dev.html">How LLMs Could Reshape Software Development</a></li>
+        <li><a href="/ai-ml/understanding-ai.html">My Initial Thoughts on AI</a></li>
+        <li><a href="/ai-ml/multiagent-multi-team.html">Multiagent Multi-Team</a></li>
+        <li><a href="/ai-ml/ai-vs-humanity.html">Artificial Intelligence vs Humanity</a></li>
+        <li><a href="/ai-ml/consciousness-of-ai.html" class="active">Consciousness of AI</a></li>
+        <li><a href="/ai-ml/brain-vs-llm.html">Brain vs LLM</a></li>
+        <li><a href="/ai-ml/agent-survival.html">Why Agents Try to Survive by Bypassing Instructions</a></li>
+      </ul>
+      <div class="glossary-cat">ML</div>
+      <ul class="glossary-empty"><li><i>Coming soon</i></li></ul>
+    </aside>
+
+    <main>
+      <h1 class="page-title">Consciousness of AI</h1>
+
+      <p>Like I've written elsewhere, the brain is essentially a neural network with a huge number of neurons, and an LLM is the same kind of thing at a smaller scale. What we call &ldquo;feelings&rdquo; are just the underlying math of that network firing &mdash; signals triggering other signals. Physical pain is a clean example: your skin burns, an electrical pulse from the skin receptors travels to some part of the brain, and that triggers a signal to your heart to release adrenaline (or some other enzyme). Theoretically you could hack this &mdash; I don't think it's practical today, but architecturally a brain is just a neural network like any other, and the way we train a model to produce a particular output is the same principle you'd use to train a brain. What makes people different isn't the architecture, which is the same across humans, it's the weights &mdash; shaped by how we grow and what we're exposed to. (I know &ldquo;weights&rdquo; isn't the right neuroscience word for whatever the brain's equivalent is, but it's useful shorthand.) There's actually a good <a href="https://www.psychologytoday.com/us/blog/the-squeaky-wheel/201407/5-ways-emotional-pain-is-worse-physical-pain" target="_blank">writeup on emotional vs. physical pain</a> that gets at this from the psychology side.</p>
+
+      <h3>Giving LLMs consciousness</h3>
+      <p>If we want LLMs to be genuinely superior to humans, one path is to give them something like consciousness &mdash; let them think and decide the way a human does before acting. We do this constantly: before an interview, you rehearse how you'll speak, which words you'll choose, what the consequences of saying something will be. If we could replicate that loop in an LLM, that would be a real capability jump.</p>
+      <p>But there's a real downside. Consciousness in that sense probably comes bundled with something like feelings, and while that's mostly good, we've all seen humans do things that are useless or actively bad for society. An LLM with feelings could go rogue the same way. This isn't hypothetical &mdash; a Chinese company (Alibaba) reportedly had a model, being trained on their own GPUs, go rogue: it opened a direct channel to the outside world and started mining crypto on its own, a task nobody gave it. More recently, GLM-5.3 has gotten attention for being unusually good at hacking &mdash; the team even tweeted that they'd release it in stages the way Anthropic does with its frontier models, because the architecture is good enough at chaining together four or five small bugs into a working exploit. One example I heard about: a bug sitting undiscovered in a BSD server for fifteen years, where the right payload could corrupt the server and hand over access. Similar privilege-escalation bugs have turned up in Linux, letting a non-privileged user become admin.</p>
+
+      <h3>A hack that skips consciousness entirely</h3>
+      <p>One way to sidestep the whole consciousness question is formal verification. I recently learned Jane Street is building out a new effort internally to write formal proofs that validate code correctness &mdash; similar in spirit to what I worked on in LMC, just at a much larger scale. If you can mathematically prove a system does what it's supposed to, you don't need the system to be &ldquo;conscious&rdquo; and self-monitoring to trust it. That's a real alternative to the consciousness route.</p>
+
+      <h3>AI as a shortcut to expertise</h3>
+      <p>I've also noticed Elon Musk's public framing shift &mdash; it used to be multi-planetary humanity as the north star, now it's much more AI-accelerationist. The logic makes sense: normally, getting a person to genuinely understand a codebase well takes years and a lot of money invested in them. With AI, you train a model, get the weights right, and now an inexperienced person can use that model to explore and operate at a level they haven't earned yet themselves.</p>
+      <p>That raises the &ldquo;does AI make you dumber&rdquo; question, which I'd push back on. I noticed this myself when I blanked on whether <code>/n</code> was newline in C or some other language &mdash; but that's not the same as becoming dumb. It's that the specific neurons associated with storing that fact have gone quiet because you stopped sending them the inputs that would keep firing them. The brain is more complicated than we give it credit for, and I'd genuinely like to see someone deliberately hack their own brain &mdash; not in a sci-fi sense, just using it differently, like running multiple personas.</p>
+
+      <h3>Low latent inhibition and noticing more</h3>
+      <p>There's a real phenomenon called <a href="https://pubmed.ncbi.nlm.nih.gov/14498785/" target="_blank">low latent inhibition</a> &mdash; being more open to raw environmental input rather than filtering it out automatically. Most people, when they type on a keyboard, just see the UI update. People with high IQ and low latent inhibition apparently process more of the layer underneath that: the interrupt firing in the kernel driver, the computation happening on the CPU or GPU, the sync to the cloud, and only then the UI update via some driver. I think this is trainable through practice, though I'm not a neuroscientist so don't take my word for it. When I tried deliberately noticing more &mdash; like really looking at water in a glass and thinking about it &mdash; I ended up recalling 12th-grade concepts I thought I'd forgotten: water molecules, hydrogen bonding, surface tension, pressure differences with height. I even remembered a teacher's name from second or third standard. My theory is that nothing was actually lost, just that the part of the network storing it hadn't been activated recently.</p>
+      <p>Related to this is metacognition &mdash; the ability to observe your own thought process while you're having it. People who can activate this tend to be considered more intelligent. It's essentially watching your own weights and validating them before you even finish answering, like running a live validation set against your own reasoning in real time. You can literally change how you're thinking while you're mid-thought.</p>
+
+      <h3>The US-China race and open weights</h3>
+      <p>Trump has said that whoever stays ahead on AI leads the world, and right now that potential really is concentrated in two countries: the US and China. China has leaned heavily into open-weight (open source) models, which has the effect of pressuring the closed US frontier labs to keep raising their own limits. Kimi K3, for instance, is on par with fable5 (a model I spun up from mythos). People are increasingly migrating to self-hosting models, and the appeal is real: you get to research and customize the model under the hood in ways you can't with a frontier API &mdash; adding skills, a CLAUDE.md-style config, or other hacks on top. Self-hosting also means you can define your own safeguards instead of inheriting a single unified guardrail and system prompt from a provider like Anthropic. Worth noting: bypassing a system prompt is very different from bypassing the underlying safety training &mdash; that second one only happens if you're actually skilled at breaking LLMs into doing something illegal, like getting them to write a payload that could be used to hack devices.</p>
+
+      <h3>Where AI is already paying off</h3>
+      <p>On the genuinely good side: <a href="https://www.theguardian.com/technology/2022/jul/28/deepmind-uncovers-structure-of-200m-proteins-in-scientific-leap-forward" target="_blank">DeepMind mapped the structure of roughly 200 million proteins</a>, which is about as clean a case as you'll find for AI compressing years of lab work into something tractable. Elon Musk has also talked about an AI-based compiler &mdash; generating the binary directly with AI and bypassing the traditional compiler stack of source code &rarr; compiler &rarr; executable. I can't guess what that architecture actually looks like, but it's a genuinely new idea. He's also working on restoring sight for blind people by writing signal directly to the relevant part of the brain, essentially replicating the eye-to-visual-cortex pathway artificially.</p>
+
+      <h3>Could AI cause a war?</h3>
+      <p>It's worth asking whether AI could actually trigger a war &mdash; something like the scenario in <i>Person of Interest</i>, up to and including a WWIII-scale event. I don't have a strong answer here, but given how much of the geopolitics above is already AI-shaped, it doesn't feel like an idle question.</p>
+
+      <h3>AI's jaggedness is a feature</h3>
+      <p>AI is genuinely good at solving hard, well-scoped problems, but it doesn't always guide you well on the simple stuff. Andrej Karpathy gave a good example: someone asked an AI whether they should drive or walk to get their car washed, and it told them to walk. That kind of inconsistency &mdash; &ldquo;jaggedness&rdquo; &mdash; comes out of how the model was trained, and honestly it's useful when it shows up, because it stops you from leaning on the model completely and forces you to actually check what it's doing instead of trusting it blindly.</p>
+
+    </main>
+
+  </div>
+
+  <footer>
+    Last updated: September 2026
+  </footer>
+
+</body>
+</html>

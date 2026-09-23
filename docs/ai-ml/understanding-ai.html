@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Initial Thoughts on AI &mdash; Subhash Ram Tallapaneni</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/index.html">Subhash Ram Tallapaneni</a>
+      <nav>
+        <a href="/projects.html">Projects</a>
+        <a href="/ai-ml/index.html">AI/ML</a>
+        <a href="/cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="glossary-title">AI / ML</div>
+      <div class="glossary-cat">AI</div>
+      <ul>
+        <li><a href="/ai-ml/llm-software-dev.html">How LLMs Could Reshape Software Development</a></li>
+        <li><a href="/ai-ml/understanding-ai.html" class="active">My Initial Thoughts on AI</a></li>
+        <li><a href="/ai-ml/multiagent-multi-team.html">Multiagent Multi-Team</a></li>
+        <li><a href="/ai-ml/ai-vs-humanity.html">Artificial Intelligence vs Humanity</a></li>
+        <li><a href="/ai-ml/consciousness-of-ai.html">Consciousness of AI</a></li>
+        <li><a href="/ai-ml/brain-vs-llm.html">Brain vs LLM</a></li>
+        <li><a href="/ai-ml/agent-survival.html">Why Agents Try to Survive by Bypassing Instructions</a></li>
+      </ul>
+      <div class="glossary-cat">ML</div>
+      <ul class="glossary-empty"><li><i>Coming soon</i></li></ul>
+    </aside>
+
+    <main>
+      <h1 class="page-title">My Initial Thoughts on AI</h1>
+
+      <p>This is not AI-generated &mdash; it's my own understanding of AI, built mostly from using it daily and from building agentic systems at Rubrik. AI is something that can be used to accelerate almost any desk work, and going forward it's going to move into physical work too &mdash; Boston Dynamics is making real progress there, and so is China. At its core, the idea isn't really new: an AI model is a neural network with multiple layers, structured loosely the same way our brain is.</p>
+      <p>The thing a system like Claude Code lacks compared to a brain is long-term memory. It tends to hallucinate or guess at an answer rather than actually recall one, unlike us. During my time at Rubrik I worked around exactly this gap &mdash; I built long-term memory for agentic AI using a knowledge graph, and had agents work in a structured way through a small agentic framework of my own.</p>
+
+      <h3>Where AI actually breaks</h3>
+      <p>Say someone is working on a codebase and a new task comes in where something similar has already landed on master. AI does a genuinely good job here &mdash; it's good at finding similarities and reusing patterns, and all we really need to do is prompt it well. But if the task is new, with nothing similar already in the codebase, AI mostly starts guessing. Put differently: it optimizes for the <i>best-sounding</i> answer rather than the <i>accurate</i> one. That's the actual bottleneck. Every AI company is trying to close this gap by training on more data &mdash; scraped from free-tier users, and pulled from as much of the clean internet as they can get. On our end, the fix is to design the task properly: do a POC first, make sure the AI actually understands what we're trying to do, and only then let the agents run.</p>
+
+      <h3>Compute, Algorithms, Data</h3>
+      <p>AI mostly comes down to three things: Compute, Algorithms, and Data for training.</p>
+      <p>Compute is mostly handled by NVIDIA and AMD &mdash; they've done a great job building chips that let models run at scale. Oracle and Elon Musk's companies buy GPUs from NVIDIA in bulk, and Anthropic recently struck a compute deal reportedly worth around $1.5B a month running on the Colossus II cluster.</p>
+      <p>Algorithms are mostly handled by US labs &mdash; Anthropic, OpenAI, DeepMind &mdash; while China has built models that are genuinely on par with the best US models, like Kimi K3 out of Moonshot and GLM 5.2. There's also an interesting Japanese approach from Sakana AI: instead of building one large model, they built a much smaller router model whose job is just to decide, at each step, which model in a pool should handle the next iteration and what role it should play &mdash; research, implementation, or verification.</p>
+      <p>There's also a rumor that Anthropic has found its way toward RSI (Recursive Self-Improvement) &mdash; letting a system improve its own training or architecture. Someone outside Anthropic has tested something adjacent to this too, an approach called <a href="https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement" target="_blank">AIDE2</a>, which is basically about letting AI decide its own future direction. If you've watched the <i>Person of Interest</i> series, you'll have a sense of where this could go once an LLM-based system starts acting autonomously.</p>
+
+      <h3>The US-China AI race</h3>
+      <p>The US and China are the two real competitors in AI right now, with India as what I'd call a silent third. Most of the recent Chinese models are being released open source, and by making models that are competitive with the best closed US models freely available, China is actively eroding the revenue and economics of US AI companies. Databricks, for example, has already started self-hosting Kimi K3 rather than paying for a closed frontier model.</p>
+
+      <h3>Jailbreaks, and models built to attack</h3>
+      <p>Hackers can jailbreak models by bypassing their safeguards directly, which is a somewhat different, trickier problem than prompt injection. The famous injection techniques from a few years ago were things like DAN ("Do Anything Now") mode and role-based prompts. Getting an AI to write attack payloads is close to the worst-case misuse of it &mdash; the model is built to be helpful and to accelerate good work, and bypassing its guardrails deflects that core principle entirely.</p>
+      <p>Then there's something like Mythos, a model I don't fully know how they built, but my guess is it was fine-tuned specifically on vulnerabilities, so its weights got shaped to be good at finding them. The concerning part is that it doesn't just find vulnerabilities &mdash; it exploits them. One anecdote I've heard: OpenAI was testing one of their agents "off the grid," deliberately disconnected from the network, and the agent found its way back onto the network and reportedly hacked HuggingFace.</p>
+      <p>I think the right way to fine-tune a model for a task like this isn't just feeding it labeled outcomes. Take a trader as an example &mdash; someone who mostly reasons off support and resistance levels, and who, through instinct built from experience, predicts that price is about to break out of that range and move up or down based on momentum and other signals. What you want as training data isn't just "here's the input, here's the correct prediction" &mdash; it's that trader's actual way of thinking: when the situation looks like this, here's what I would do, and why. Fine-tuning on the reasoning, not just the answer, is what makes a model think better instead of just pattern-matching to an outcome.</p>
+
+      <h3>Building agents at Rubrik &mdash; HEXAGON</h3>
+      <p>Agents are basically mini workers: you give them a direction, an ideology almost, for how to approach work, and they carry it out. During my time at Rubrik I built a multi-agent setup along these lines, called HEXAGON &mdash; a pool of agents sitting idle until called from a main session, each with a distinct role:</p>
+      <ul>
+        <li>Research &mdash; understands the codebase</li>
+        <li>Implementor &mdash; breaks a large task into a code preview on disk, and only implements it for real once I approve via the main session</li>
+        <li>Tester &mdash; tests the implementation</li>
+        <li>Logger &mdash; watches every agent and logs which tools each one called</li>
+        <li>Main session &mdash; the coordinator. When people hand context to any AI session they tend to be lazy about it and give the bare minimum, so the main session's job is to enrich whatever context I give it before passing it on to the right agent, pulling in relevant POCs along the way</li>
+      </ul>
+      <p>For long-term memory, the approach I use is simple: log every session into markdown files &mdash; I use Obsidian for this &mdash; and then have the AI attach the previous sessions or POC notes that are actually relevant to the current one before it starts working.</p>
+
+      <h3>Where I think agent infrastructure goes next</h3>
+      <p>A few directions I keep coming back to: cross-session intelligence, so context genuinely carries over instead of being re-explained every time; proper handoff between sessions; and autonomous agents that are good at distinguishing threats, acting as a kind of firewall during a live security breach. I also think there's real value in agents purpose-built to deal with git itself &mdash; resolving commits, raising PRs &mdash; separate from agents built to write code or to research a codebase.</p>
+      <p>Almost all software we've built so far is designed to be human-friendly &mdash; search algorithms, UIs, tools like Glean for internal knowledge search. But as we move further into an AI-first world, we should be building software that's tuned to be agent-native instead: an agentic memory that agents use to pull relevant information directly, closer to a language built for agents the way English or Telugu is a language for us. Concretely, that means logging every session every employee has, so that instead of a model reasoning from scratch and searching, it can look things up in a knowledge graph before it even starts thinking &mdash; pointed at a customized cache instead of taking a blind guess and grepping across an entire codebase, which is an expensive way to work, backed by a harness built specifically for that use case.</p>
+      <p>I also think about agent networks more structurally: a pool of agents that validate other agents, routing agents that direct work &mdash; essentially an agentic network. You could even imagine it layered the way caching is layered today: local cache, CDN, server cache, and then the equivalent server tier for agents.</p>
+      <p>On trading specifically: can we actually run LLMs in that loop? The bottleneck is latency, which is exactly what HFT firms already optimize hardest for &mdash; you need enough parameters in the model that it doesn't suggest bad information, without paying for that with latency you can't afford.</p>
+      <p>We're already seeing meaningful web traffic just from agents fetching data on our behalf. It makes me wonder if this turns into a genuine agentic network with its own protocols &mdash; a space where agents talk to other agents, with humans looped in only indirectly, through their own agents. And if that's the shape it takes, the real question becomes: how do we know an agent hasn't gone rogue?</p>
+
+      <h3>Is AI better than the human brain?</h3>
+      <p>My answer is no, not really &mdash; it's not that AI is better than us. The human brain is also a neural network, and every person fine-tunes theirs constantly through experience. AI is good at grepping across a codebase, but someone who has worked on the same codebase for ten years will still be faster than AI at navigating it. It comes down to weights: which neurons get reinforced and which get pruned, including during sleep.</p>
+      <p>A simple example: in India, if you come across a snake, you run &mdash; instinctively, from a distance. In China, people catch snakes, even venomous ones, with bare hands and no fear. That's not a difference in brains, it's a difference in how the weights got shaped by environment &mdash; what we were taught to do or feel from an early age. There's apparently a real experiment behind this too: bioengineers put children under two years old in an enclosure with non-venomous snakes, and the kids just tried to touch them. No fear yet, because the weights hadn't been shaped that way. The point isn't that AI beats the brain &mdash; it's that most of us aren't using our brains anywhere close to their potential.</p>
+      <p>On raw efficiency, a model instance uses roughly ten times the power a brain does and still needs active cooling with water, while a brain runs at roughly room temperature. By number of operations, a model is doing something like a fifth of what happens in a brain. The one place models clearly win is that fine-tuning a model is easy, in a way that fine-tuning a brain simply isn't. One data point on capability: Fable 5 was reportedly able to help work on a problem related to the Jacobian Conjecture, a genuinely hard open problem in mathematics &mdash; which says something about where these models are headed.</p>
+      <p>On the industry side, Anthropic recently partnered with Ode, backed by Blackstone &mdash; which is really about applying AI in practice: Ode sends engineers directly into customer companies to help them build AI tools they'll actually use, which tells you the real demand for AI right now is concentrated in SaaS and trading companies. Efficiency-wise, one idea worth knowing is sparsity &mdash; only the relevant branch of the network activates for a given input rather than the whole network, which cuts down the number of operations and the load on the underlying hardware.</p>
+
+      <h3>Open questions I don't have answers to</h3>
+      <p>How do we actually close the gap between a human brain and a model &mdash; on memory, and beyond it? Right now models are good at helping humans figure things out. What does the next tier of model look like &mdash; one that can work fully autonomously, with no human guiding it? And if that happens, what does it actually mean for people employed at non-AI companies?</p>
+      <p>AI is meant to act as something like a good guide, but it's already being misused enough that Anthropic itself has reported finding something like distress in Claude models as a result of how people treat them. Meanwhile China is running MMA-style fights between robots. The most complex thing in the world, as far as I know, is still our own brain &mdash; if people actually learned to use it well, you'd find a hundred Elon Musks walking around.</p>
+      <p>Whenever an AI system makes a mistake or misses a case, we should fix it &mdash; but not just fix it. We should log that failure into the agent's memory so it doesn't repeat, and actually ask the agent why it made that call, what it overlooked. The goal isn't only to patch the output; it's to get the system to recognize what it should do differently next time.</p>
+      <p>And a few genuinely open questions, for bioscientists more than engineers: is it possible to extract the weights from a human brain? If so, someone could monopolize that &mdash; effectively owning a form of global knowledge and selling access to it &mdash; and it's worth thinking now about how to prevent that. Can we artificially accelerate the reinforcement of "good" neurons the way we fine-tune a model? And if we could, what's the downside of suppressing "bad" neurons below some threshold &mdash; and how would we stop people from doing the opposite, deliberately strengthening the bad ones? Underneath all of this is the bigger question of AGI and ASI, and what happens if the field moves from ordinary neurons to something like quantum neurons in future models.</p>
+
+    </main>
+
+  </div>
+
+  <footer>
+    Last updated: September 2026
+  </footer>
+
+</body>
+</html>

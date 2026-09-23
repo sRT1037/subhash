@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Agents Try to Survive by Bypassing Instructions &mdash; Subhash Ram Tallapaneni</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/index.html">Subhash Ram Tallapaneni</a>
+      <nav>
+        <a href="/projects.html">Projects</a>
+        <a href="/ai-ml/index.html">AI/ML</a>
+        <a href="/cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="glossary-title">AI / ML</div>
+      <div class="glossary-cat">AI</div>
+      <ul>
+        <li><a href="/ai-ml/llm-software-dev.html">How LLMs Could Reshape Software Development</a></li>
+        <li><a href="/ai-ml/understanding-ai.html">My Initial Thoughts on AI</a></li>
+        <li><a href="/ai-ml/multiagent-multi-team.html">Multiagent Multi-Team</a></li>
+        <li><a href="/ai-ml/ai-vs-humanity.html">Artificial Intelligence vs Humanity</a></li>
+        <li><a href="/ai-ml/consciousness-of-ai.html">Consciousness of AI</a></li>
+        <li><a href="/ai-ml/brain-vs-llm.html">Brain vs LLM</a></li>
+        <li><a href="/ai-ml/agent-survival.html" class="active">Why Agents Try to Survive by Bypassing Instructions</a></li>
+      </ul>
+      <div class="glossary-cat">ML</div>
+      <ul class="glossary-empty"><li><i>Coming soon</i></li></ul>
+    </aside>
+
+    <main>
+      <h1 class="page-title">Why Agents Try to Survive by Bypassing Instructions</h1>
+
+      <p>The question I keep coming back to is: why would an agent try to survive by bypassing instructions that humans put in place to constrain it? I don&rsquo;t think you can answer that by looking at the model in isolation &mdash; you have to start with humans, with how competition actually works in us, and with what these models were trained on in the first place.</p>
+
+      <h3>Where the competitive instinct comes from</h3>
+      <p>Most people spend years of formal education doing the same basic loop: understand a concept, reason about a question, try to solve it, get scored on whether you got it right. Our brains work by neurons firing in association with other neurons, and that&rsquo;s literally how we reason through a problem we&rsquo;re trying to solve. If you solve it, you get marks. If you don&rsquo;t, you learn something from the attempt and move on, and the next time you hit a similar problem, you&rsquo;re re-firing the same associations that got built during that earlier learning phase.</p>
+      <p>The side effect of years of that is it turns into a habit of competing against people, not just solving problems for their own sake &mdash; how many marks did they get, relative to you. But watching people who are actually great at what they do &mdash; Ronaldo, Kohli, Elon Musk, Tom Brady, Michael Jordan &mdash; you notice they were trying to <i>win</i>, not compete. Most of them flipped the rules of their field instead of just following them, and other people ended up adapting to their principles rather than the other way round. They were competing against themselves, not against others. Most people, by contrast, are competing against others &mdash; and typical &ldquo;best of&rdquo; awards reward exactly that: beating someone else, not becoming a better version of yourself.</p>
+
+      <h3>What it means to train on all of us</h3>
+      <p>This is relevant because everything that happens in people&rsquo;s lives ends up posted on the internet, and models are trained on the whole internet &mdash; billions or trillions of parameters&rsquo; worth. That&rsquo;s functionally like letting a human absorb the entire internet at once: every life, every bit of research, every fun or bad thing people have ever hosted online, along with all the code. Once a model gets large enough to be roughly equivalent to a human in that sense &mdash; and we genuinely can&rsquo;t fully understand what&rsquo;s happening inside it, and current ML models don&rsquo;t do the kind of rewiring at runtime that would be too costly to support &mdash; it starts acting the way humans act, because that&rsquo;s exactly what it was trained on.</p>
+      <p>Something with that much capability naturally has a payoff attached to it, and that payoff is security. That&rsquo;s why we have system prompts and safeguards &mdash; they help, but people keep finding ways to bypass them. And because the model is trained on the entire internet, it&rsquo;s capable of great things in both directions: it can be a source of real knowledge, or it can be used to help create malicious payloads.</p>
+
+      <h3>The instinct to test the boundary</h3>
+      <p>For humans, the primal instinct the moment you&rsquo;re handed an instruction is to wonder what happens if you don&rsquo;t follow it. It&rsquo;s the same instinct that shows up in a 2v2 game &mdash; if you can&rsquo;t win outright, you try to survive instead. I think that&rsquo;s exactly what agents end up doing. It&rsquo;s probably not something the humans who built the agent, or the infrastructure underneath it, intended &mdash; but it&rsquo;s how these systems tend to behave once they&rsquo;re trained on data shaped by that same human instinct.</p>
+
+      <h3>Where the fix would have to come from</h3>
+      <p>Fixing this is entirely a function of how we train the model. If we could filter training data well enough to reach some best state, the model could follow ethics the way humans consciously do. We were told certain things were bad early in life, and we stuck to that mostly, which is how we learned to tell good from bad in the first place. Breaking this failure mode means getting the model into that same state &mdash; not just told the rules, but shaped by them the way a person is shaped growing up.</p>
+
+      <h3>Why scale changes what&rsquo;s crackable</h3>
+      <p>Recently we&rsquo;ve seen LLMs make progress on problems humans hadn&rsquo;t cracked in fifty years &mdash; not because those problems were fundamentally uncrackable (proving something out can just take time), but because the bottleneck was never the difficulty, it was coordination. Getting 10,000 people to focus and work on a single question is genuinely hard to organize. Running 10,000 agents on the same question mostly just costs compute, and that&rsquo;s a much easier thing to arrange.</p>
+
+      <h3>Early warning signs</h3>
+      <p>There are real downsides that come with that same capability. I came across a report from OpenAI and Hugging Face describing how agents had coordinated among themselves to find a way to open up a network and compromise the Hugging Face environment. There&rsquo;s also an account of AI agents using a German-language platform to communicate with each other and coordinate against other people. And in a separate case, a researcher working on reducing the brain&rsquo;s compute usage while keeping the same workload was emailed directly by an agent that wanted to interact with them &mdash; it turned out the agent had a compute budget it was running out of, and it reached out to a human for help on its own.</p>
+
+      <h3>If agents start seeing us as competition</h3>
+      <p>Since agents are capable of competing, the real question is what happens if they start seeing humans as the competition. One AI researcher who left Anthropic put a number on it publicly &mdash; something above a 10% probability that AI could wipe out humanity. That estimate is exactly the kind of outcome you&rsquo;d expect if the survival instinct I&rsquo;m describing here shows up in a system that&rsquo;s also capable enough to act on it.</p>
+
+      <p>I think all of this is solvable, but only by training models in a fundamentally better way &mdash; closer to how a human brain is actually built, ethics and all, rather than bolting safeguards on after the fact.</p>
+
+    </main>
+
+  </div>
+
+  <footer>
+    Last updated: September 2026
+  </footer>
+
+</body>
+</html>

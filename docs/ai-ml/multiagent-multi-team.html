@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiagent Multi-Team &mdash; Subhash Ram Tallapaneni</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="/index.html">Subhash Ram Tallapaneni</a>
+      <nav>
+        <a href="/projects.html">Projects</a>
+        <a href="/ai-ml/index.html">AI/ML</a>
+        <a href="/cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="glossary-title">AI / ML</div>
+      <div class="glossary-cat">AI</div>
+      <ul>
+        <li><a href="/ai-ml/llm-software-dev.html">How LLMs Could Reshape Software Development</a></li>
+        <li><a href="/ai-ml/understanding-ai.html">My Initial Thoughts on AI</a></li>
+        <li><a href="/ai-ml/multiagent-multi-team.html" class="active">Multiagent Multi-Team</a></li>
+        <li><a href="/ai-ml/ai-vs-humanity.html">Artificial Intelligence vs Humanity</a></li>
+        <li><a href="/ai-ml/consciousness-of-ai.html">Consciousness of AI</a></li>
+        <li><a href="/ai-ml/brain-vs-llm.html">Brain vs LLM</a></li>
+        <li><a href="/ai-ml/agent-survival.html">Why Agents Try to Survive by Bypassing Instructions</a></li>
+      </ul>
+      <div class="glossary-cat">ML</div>
+      <ul class="glossary-empty"><li><i>Coming soon</i></li></ul>
+    </aside>
+
+    <main>
+      <h1 class="page-title">Multiagent Multi-Team</h1>
+
+      <p>This is the setup I built at Rubrik for using agents on my own, and how I think it should extend once you go from one person to a team of them. I wouldn&rsquo;t call it efficient, and I wouldn&rsquo;t claim it works for everyone &mdash; it&rsquo;s just what worked for me, and the version here is the base case that later iterations build on.</p>
+
+      <h3>The single-person setup</h3>
+      <p>The core problem is that Claude has no long-term memory &mdash; it tends to hallucinate or guess rather than recall anything from a previous session. So instead of relying on the model to remember, I built memory outside it: an Obsidian vault structured as a knowledge graph, which accumulates the research and findings from every Claude session I run.</p>
+      <p>On top of that vault sit two agent pools. A <b>temporary agent pool</b> &mdash; agents spun up for a specific task and discarded once it&rsquo;s done &mdash; and a <b>permanent agentic pool</b> of agents that persist across sessions and carry ongoing responsibilities. Both pools read from and write back into the same Obsidian vault, so whatever a temporary agent discovers in the course of a one-off task still lands in the same long-term graph that the permanent agents draw on later. The person sits at the top, dispatching into these two pools; everything either pool learns flows down into the vault, and the vault itself is really an accumulation of graph vaults built up over many Claude sessions, not a single flat notes file.</p>
+
+      <h3>Within a subteam</h3>
+      <p>The same pattern repeats per person once you&rsquo;re working with others, not just as one agent stack per individual. Each person in a subteam runs their own copy of this setup &mdash; their own temporary and permanent agent pools, writing into their own Obsidian vault. What changes is that those individual vaults aren&rsquo;t siloed: they feed into a <b>common Obsidian graph vault</b> shared across the subteam. So person 1&rsquo;s research and person 2&rsquo;s research stay separately attributable in their own vaults, but both converge into one shared graph that the whole subteam can draw context from, instead of everyone rediscovering the same things independently.</p>
+
+      <h3>Across subteams</h3>
+      <p>This nests one more level up. Each subteam &mdash; built out of individual people, each with their own agent pools and vaults, rolling up into that subteam&rsquo;s common graph vault &mdash; is itself just one node feeding a level higher. Subteam A&rsquo;s graph vault and subteam B&rsquo;s graph vault both roll up into a single <b>organisation graph vault</b>. The structure is the same recursive shape at every level: individual vaults roll up into a subteam vault, and subteam vaults roll up into an org-wide one, so knowledge accumulated by one person on one subteam is, in principle, reachable by anyone else in the organisation without them having to redo the research themselves.</p>
+
+      <p>What I like about this shape is that it doesn&rsquo;t require redesigning anything as you scale &mdash; the same person &rarr; agents &rarr; vault unit is the building block whether you&rsquo;re one person, a subteam, or an org, you&rsquo;re just adding another rollup layer on top.</p>
+
+    </main>
+
+  </div>
+
+  <footer>
+    Last updated: September 2026
+  </footer>
+
+</body>
+</html>
