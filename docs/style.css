@@ -10,6 +10,10 @@ body {
 a { color: #52adc8; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+@media (min-width: 925px) {
+  body { font-size: 16px; }
+}
+
 /* top bar */
 .masthead { border-bottom: 1px solid #e0e0e0; }
 .masthead-inner {
@@ -26,7 +30,13 @@ a:hover { text-decoration: underline; }
 .site-title:hover { text-decoration: none; }
 .masthead nav { display: flex; flex-wrap: wrap; gap: 4px 18px; }
 .masthead nav a { color: #333; font-size: 14px; }
+.masthead nav a:hover { text-decoration: none; }
 .masthead nav a.active { color: #52adc8; font-weight: bold; }
+/* desktop: .nav-desktop's <a>s become flex items of nav directly;
+   the mobile-only hamburger/dropdown markup stays out of the layout
+   entirely (see the 760px override below) */
+.nav-desktop { display: contents; }
+.nav-mobile { display: none; }
 
 /* layout */
 .container {
@@ -47,22 +57,21 @@ a:hover { text-decoration: underline; }
   padding: 4px;
   border: 1px solid #e5e5e5;
 }
-.author-name { font-size: 16px; margin: 12px 0 2px; }
 .author-bio { font-size: 13px; color: #555; margin: 0 0 12px; }
 .author-links { list-style: none; margin: 0; padding: 0; font-size: 13px; }
-.author-links li { margin-bottom: 6px; }
+.author-links li { margin-bottom: 4px; }
 .author-links li, .author-links a { display: flex; align-items: center; gap: 7px; }
+.author-links a { padding: 3px 0; }
 .author-links .location { color: #555; }
 .author-links svg { width: 14px; height: 14px; flex-shrink: 0; color: #888; }
+.links-toggle { display: none; }
 
 /* main content */
 main { flex: 1; min-width: 0; }
 main p { margin: 0 0 14px 0; }
 .page-title {
-  font-size: 22px;
+  font-size: 24px;
   margin: 0 0 16px 0;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #e0e0e0;
 }
 h2 { font-size: 19px; margin: 40px 0 14px 0; padding-bottom: 4px; border-bottom: 1px solid #eee; }
 h3 { font-size: 15px; margin: 22px 0 10px 0; }
@@ -110,9 +119,10 @@ table.coursework td { padding: 2px 6px 2px 0; vertical-align: top; }
 
 footer {
   max-width: 1000px;
-  margin: 40px auto 24px;
-  padding: 12px 20px 0;
-  border-top: 1px solid #e0e0e0;
+  margin: 40px auto 0;
+  padding: 16px 20px;
+  border-top: 1px solid #ddd;
+  background: #f7f7f7;
   font-size: 12px;
   color: #777;
 }
@@ -120,9 +130,71 @@ footer {
 @media (max-width: 760px) {
   .masthead-inner { padding: 12px 16px; }
   .container { flex-direction: column; gap: 24px; padding: 0 16px; }
-  .sidebar { width: 100%; max-width: 240px; position: static; }
+  .sidebar { width: 100%; max-width: 100%; position: static; }
   .masthead nav { gap: 4px 16px; }
   .masthead nav a { font-size: 13px; }
+
+  /* CV stays inline/visible (Yann's masthead keeps its first item
+     visible the same way); Projects/AI-ML collapse behind a 3-line
+     toggle into a dropdown -- same button/card language as the
+     sidebar's Links toggle just above, so the two feel like one
+     design system rather than two different patterns. */
+  .nav-desktop { display: none; }
+  .nav-mobile { display: flex; align-items: center; gap: 10px; }
+  .nav-mobile a { font-size: 13px; }
+
+  .nav-dropdown-wrapper { position: relative; }
+  .nav-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; padding: 0;
+    background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;
+    color: #555;
+  }
+  .nav-toggle svg { width: 16px; height: 16px; }
+  .nav-toggle:hover { border-color: #52adc8; color: #52adc8; }
+
+  .nav-dropdown {
+    display: none;
+    position: absolute; top: 100%; right: 0; margin-top: 8px;
+    padding: 6px 0; min-width: 140px;
+    background: #fff; border: 1px solid #eee; border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15); z-index: 10;
+  }
+  .nav-dropdown a { display: block; padding: 8px 14px; color: #333; }
+  .nav-dropdown a:hover { background: #f5f5f5; text-decoration: none; }
+  .nav-dropdown a.active { color: #52adc8; font-weight: bold; }
+  .nav-dropdown-wrapper.open .nav-dropdown { display: block; }
+
+  /* Matches yanndubs.github.io's actual mobile mechanism: a 3-cell
+     row (avatar / name+bio / a "Links" toggle button) -- his theme
+     uses display:table-cell for this, we use flex, same visual
+     result. His .author__urls list is display:none until the toggle
+     button is clicked (adds .open here, his adds a JS-driven class),
+     then it appears as an absolute-positioned dropdown card. Only
+     applies to the profile card, not the AI/ML glossary nav (no
+     image there, just stacks as a plain list). */
+  .profile-card { display: flex; align-items: flex-start; gap: 15px; }
+  .profile-card img { width: 36px; height: 36px; max-width: 36px; margin: 0; padding: 0; border: 0; flex-shrink: 0; }
+  .author-info { flex: 1; min-width: 0; }
+  .author-bio { margin: 0; line-height: 1.3; }
+
+  .links-wrapper { position: relative; flex-shrink: 0; }
+  .links-toggle {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 10px; font-size: 12px; color: #555;
+    background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: pointer;
+  }
+  .links-toggle svg { width: 13px; height: 13px; }
+  .links-toggle:hover { border-color: #52adc8; color: #52adc8; }
+
+  .author-links {
+    display: none;
+    position: absolute; top: 100%; right: 0; margin-top: 8px;
+    padding: 10px; min-width: 170px;
+    background: #fff; border: 1px solid #eee; border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15); z-index: 10;
+  }
+  .links-wrapper.open .author-links { display: block; }
 
   /* stack the coursework grid into a single column so it never
      forces horizontal scroll on a phone-width screen */
@@ -135,9 +207,6 @@ footer {
 }
 
 @media (max-width: 420px) {
-  body { font-size: 14px; }
-  .sidebar { max-width: 100%; text-align: left; }
-  .sidebar img { max-width: 140px; margin: 0 auto; }
   .cv-entry { gap: 10px; }
   .cv-entry img { width: 42px; height: 42px; }
 }

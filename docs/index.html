@@ -4,17 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Subhash Ram Tallapaneni</title>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/subhash/style.css">
 </head>
 <body>
 
   <header class="masthead">
     <div class="masthead-inner">
-      <a class="site-title" href="/index.html">Subhash Ram Tallapaneni</a>
+      <a class="site-title" href="/subhash/index.html">Subhash Ram Tallapaneni</a>
       <nav>
-        <a href="/projects.html">Projects</a>
-        <a href="/ai-ml/index.html">AI/ML</a>
-        <a href="/cv.html">CV</a>
+        <span class="nav-desktop">
+          <a href="/subhash/projects.html">Projects</a>
+          <a href="/subhash/ai-ml/index.html">AI/ML</a>
+          <a href="/subhash/cv.html">CV</a>
+        </span>
+        <span class="nav-mobile">
+          <a href="/subhash/cv.html">CV</a>
+          <div class="nav-dropdown-wrapper">
+            <button class="nav-toggle" type="button" onclick="this.parentElement.classList.toggle('open')" aria-label="Menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <div class="nav-dropdown">
+              <a href="/subhash/projects.html">Projects</a>
+            <a href="/subhash/ai-ml/index.html">AI/ML</a>
+            </div>
+          </div>
+        </span>
       </nav>
     </div>
   </header>
@@ -22,14 +36,24 @@
   <div class="container">
 
     <aside class="sidebar">
-      <img src="/assets/profile.jpg" alt="Subhash Ram Tallapaneni" onerror="this.style.display='none'">
-      <p class="author-bio">CS Undergraduate, IIT Madras</p>
-      <ul class="author-links">
-        <li class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</li>
-        <li><a href="mailto:subhashramtallapaneni121@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a></li>
-        <li><a href="https://github.com/sRT1037" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub</a></li>
-        <li><a href="https://linkedin.com/in/subhashram236" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.5V9h3.4v1.6h.05c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM7.1 20.4H3.6V9h3.5v11.4z"/></svg>LinkedIn</a></li>
-      </ul>
+      <div class="profile-card">
+        <img src="/subhash/assets/profile.jpg" alt="Subhash Ram Tallapaneni" onerror="this.style.display='none'">
+        <div class="author-info">
+          <p class="author-bio">CS Undergraduate, IIT Madras</p>
+        </div>
+        <div class="links-wrapper">
+          <button class="links-toggle" type="button" onclick="this.parentElement.classList.toggle('open')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+            <span>Links</span>
+          </button>
+          <ul class="author-links">
+            <li class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</li>
+            <li><a href="mailto:subhashramtallapaneni121@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email</a></li>
+            <li><a href="https://github.com/sRT1037" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.3-3.2-.1-.3-.6-1.5.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.2 3.4-1.2.7 1.7.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>GitHub</a></li>
+            <li><a href="https://linkedin.com/in/subhashram236" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.5V9h3.4v1.6h.05c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM7.1 20.4H3.6V9h3.5v11.4z"/></svg>LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
 
     </aside>
 
